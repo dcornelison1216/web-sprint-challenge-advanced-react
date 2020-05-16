@@ -15,7 +15,6 @@ export default class PlantList extends Component {
   fetch('http://localhost:3333/plants')
   .then(res => res.json())
   .then(res => {
-    console.log(res.plantsData)
     if(res.status === 'error') {
       this.setState({ error: res.message });
     } else {
