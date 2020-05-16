@@ -1,11 +1,12 @@
 import React from "react";
 import * as rtl from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
+import App from '../App';
 
 // Write up the two tests here and make sure they are testing what the title shows
 
 test("form header renders", () => {
-  const form = rtl.render(<CheckoutForm />);
+  const form = rtl.render(<App />);
   const header = form.getByTestId('header');
   expect(header).toBeInTheDocument();
 });
@@ -14,7 +15,7 @@ test("form shows success message on submit with form details", async() => {
     // declare elements
   const form = rtl.render(<CheckoutForm />);
   const fname = form.getByTestId('fname');
-  const lname = form.getByTestId('name');
+  const lname = form.getByTestId('lname');
   const address = form.getByTestId('address');
   const city = form.getByTestId('city');
   const state = form.getByTestId('state');
